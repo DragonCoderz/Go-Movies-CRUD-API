@@ -35,7 +35,7 @@ import (
  func deleteMovie(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r) //This line uses the mux.Vars function from the Gorilla Mux package to retrieve the route parameters from the request. It extracts the parameters from the URL path, if any are specified. The parameters are stored in the params variable, which is a map of string keys to string values.
-	for j, item := range movies {
+	for index,  item := range movies {
 		if item.ID == params["id"] {
 			movies = append(movies[:index], movies[index+1:]...)
 			break
